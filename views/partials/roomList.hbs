@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row room-list-container">
+        {{#each data.rooms}}
+          <div class="col-md-4">
+            <a href="/roomDescription?roomNo={{number}}">
+            <img src={{src}} class="img-fluid" alt="Room {{number}}">
+          </a>
+          <p class="title">Room Sample {{number}}</p>
+          <p class="font-weight-light">{{description}}</p>
+          <p class="price">$ {{price}}</p>
+          </div>        
+        {{/each}}
+    </div>      
+</div>

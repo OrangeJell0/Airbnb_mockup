@@ -1,0 +1,195 @@
+@media (min-width: 1050px) {
+    .carousel-caption{
+        margin-bottom: 50px;
+    }
+}
+@media (min-width: 1220px) {
+    .carousel-caption{
+        margin-bottom: 100px;
+    }
+}
+@media (min-width: 1250px) {
+    .carousel-caption{
+        margin-bottom: 300px;
+    }
+}
+
+/* navbar */
+.navbar{
+    height:100px;
+    padding-left: 70px;
+    padding-right: 70px;
+}
+#navagator{
+    font-size: larger;
+}
+
+#house-logo{
+    width: 45px;
+    height: 45px;
+}
+#member-logo{
+    width: 35px;
+    height: 35px;
+}
+#logo-text{
+    font-size: xx-large;
+}
+
+.carousel-inner{
+    width:100%;
+    max-height: 700px !important;
+}
+
+.modal-content{
+    padding: 30px;
+}
+.modal-body{
+    margin-top:10px;
+}
+
+.form-area{
+    padding-top: 5em;
+    padding-bottom: 5em;
+    background-image: url("../img/beach.jpg");
+    background-size:100% 100%;
+}
+.information-area{
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
+#searchForm{
+    width: 400px;
+    padding: 2em;
+}
+
+#login{
+    max-width: 600px;
+    padding-top: 8em;
+    padding-bottom: 8em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#regist-form{
+    max-width: 600px;
+    padding-top: 4em;
+    padding-bottom: 2em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#registRoom{
+    max-width: 600px;
+    padding-top: 4em;
+    padding-bottom: 2em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#modifyRoom{
+    max-width: 600px;
+    padding-top: 4em;
+    padding-bottom: 2em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#bookRoom{
+    max-width: 600px;
+    padding-top: 4em;
+    padding-bottom: 2em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.room-list-container{
+    padding-top: 4em;
+    padding-bottom: 2em;
+}
+
+.divider{
+    margin-top:30px;
+}
+
+#footer-icon{
+    margin-top: 10px;
+    margin-bottom:10px;
+}
+
+#regist-divider{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 650px;
+}
+
+#sign-in-icon{
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+#twitter{
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+#log-in-twitter{
+    margin-left: 1em;
+    margin-right: 1em;
+}
+.fa-twitter{
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.text-wrapper{
+    margin-top:100px;
+    text-align: right;
+    text-shadow: 2px 2px #03cefc;
+}
+#quote-author{
+    margin-top: 50px;
+}
+
+footer{
+    height: 100px;
+}
+
+.fa {
+    padding: 10px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+}
+.fa:hover {
+    opacity: 0.7;
+}.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+  
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+.fa-instagram {
+    background: #125688;
+    color: white;
+}
+
+#hide {
+    display: none;
+}
+
+
+/* dashboard area */
+#dashArea{
+    padding: 100px;
+    height: 80vh;
+}
+#welcome-message{
+    padding: 80px 100px;
+}

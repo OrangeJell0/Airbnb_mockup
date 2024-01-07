@@ -1,0 +1,63 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <form action="/registRoom" method="POST" id="registRoom" enctype="multipart/form-data" class="mt-5">
+            <h5>Create A New Room</h5>
+            <br>
+            <div class="form-group">
+                <input type="text" class="form-control" id="room-title" name="title" placeholder="Room Title" tabindex="1"  autofocus>
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control" id="room-price" name="price" placeholder="Room Price" tabindex="2">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="room-description" name="description" placeholder="Room Description" tabindex="3">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="room-location" name="location" placeholder="Room Location" tabindex="3">
+            </div>
+                <h5>Room Picture</h5>
+            <div class="form-group">
+                <input type="file" class="form-control" id="photo" name="photo">
+            </div>
+
+            <div class="form-group mt-3">
+                <input type="submit" class="btn btn-primary btn-block" value="Submit" tabindex="10">
+                <input type="reset" class="btn btn-secondary btn-block" value="Reset">
+            </div>
+        </form>
+
+        <form action="/modifyRoom" method="POST" id="modifyRoom" enctype="multipart/form-data">
+            <h5>Modify An Existing Room</h5>
+            <br>
+            <div class="form-group">
+                <label for="roomNumber">Please select a room:</label>
+                <select type="text" class="form-control" id="roomNumber" name="roomNumber" placeholder="Room Number">
+                    {{#each data.rooms}}
+                        <option value={{number}}>Room No. {{number}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="room-title" name="title" placeholder="Room Title" tabindex="1"  autofocus>
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control" id="room-price" name="price" placeholder="Room Price" tabindex="2">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="room-description" name="description" placeholder="Room Description" tabindex="3">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="room-location" name="location" placeholder="Room Location" tabindex="3">
+            </div>
+                <h5>Room Picture</h5>
+            <div class="form-group">
+                <input type="file" class="form-control" id="photo" name="photo">
+            </div>
+
+            <div class="form-group mt-3">
+                <input type="submit" class="btn btn-primary btn-block" value="Submit" tabindex="10">
+                <input type="reset" class="btn btn-secondary btn-block" value="Reset">
+            </div>
+        </form>
+    </div>    
+</div>

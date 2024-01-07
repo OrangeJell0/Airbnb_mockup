@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- fontawsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- local CSS -->
+    <link rel="stylesheet" href="css/default.css" type="text/css">
+    <title>Tony's Airbnb Assignment</title>
+</head>
+<body>
+    <header>
+        <!-- navigation bar -->
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="row">
+                <a class="navbar-brand" href="/">
+                    <img src="/img/logo.svg" width="30" height="30" class="d-inline-block align-top" id="house-logo" alt="">
+                    <span class="font-weight-bold" id="logo-text">Tony's AirBnB</span>
+                </a>
+                <a class="nav-item nav-link text-white font-weight-bold align-self-center mt-2 ml-2" id="navagator" href="/roomlist">Room Display</a>
+            </div>
+            
+            <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="/img/member.svg" width="30" height="30" class="d-inline-block align-top" id="member-logo" alt="">
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/login">Log In</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="/registration" id="sign-up-button">Sign Up</a>
+                </div>
+            </div>            
+            
+  
+        </nav>
+    </header>
+
+    {{#if data.promotion}}
+        {{> promotion}}
+    {{/if}}
+
+    {{#if data.searchForm}}
+        {{> searchForm}}
+    {{/if}}
+
+    {{#if data.searchResult}}
+        {{> searchResult}}
+    {{/if}}
+
+    {{#if data.information}}
+        {{> information}}
+    {{/if}}
+
+    {{#if data.registForm}}
+        {{> registForm}}
+        <script src="js/regist.js"></script>
+    {{/if}}
+
+    {{#if data.loginForm}}
+        {{> loginForm}}
+        <script src="js/login.js"></script>
+    {{/if}}
+
+    {{#if data.registFeedback}}
+        {{> registFeedback}}
+        <script src="js/regist.js"></script>
+    {{/if}}
+
+    {{#if data.adminDashboard}}
+        {{> adminDashboard}}
+    {{/if}}
+
+    {{#if data.roomList}}
+        {{> roomList}}
+    {{/if}}
+
+    {{#if data.renderWelcome}}
+        {{> registOk}}
+    {{/if}}
+    
+    {{#if data.renderDash}}
+        {{> memberDashboard}}
+    {{/if}}
+
+    {{#if roomDescription}}
+        {{> roomDescription}}
+    {{/if}}
+
+    {{#if bookSuccess}}
+        {{> bookSuccess}}
+    {{/if}}
+
+    <!-- footer -->
+    <div class="bg-dark text-white">
+        <footer class="row justify-content-between align-items-center">
+            <div class="dummy col-md-1"></div>
+            <div class="navbar-brand col font-weight-bold logo-wrapper">
+                <img src="/img/logo.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+                Tony's AirBnB
+            </div>
+            <span class="col">© 2020 Tony's AirBnB. All rights reserved.</span>
+            <div class="col row justify-content-end icon-group">
+                <span class="fa fa-facebook"></span>
+                <span class="fa fa-twitter"></span>
+                <span class="fa fa-instagram"></span>
+            </div>
+            <div class="dummy col-md-1"></div>
+        </footer>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    
+    </body>
+</html>

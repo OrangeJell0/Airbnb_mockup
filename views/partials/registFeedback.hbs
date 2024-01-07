@@ -1,0 +1,136 @@
+<div class="container">
+        <form action="/register-user" method="POST" id="regist-form">
+            <div class="form-group">                
+                {{#unless data.isGoodEmail}}
+                    <input type="Email" class="form-control is-invalid" id="email" name="email" autocomplete="email" placeholder="Email Address" tabindex="1"  autofocus>
+                    <div class="invalid-feedback">Please enter an email address.</div>
+                {{else}}
+                    <input type="Email" class="form-control" id="email" name="email" autocomplete="email" value={{data.email}} placeholder="Email Address" tabindex="1"  autofocus>
+                {{/unless}}
+            </div>
+            <div class="form-group">                
+                {{#if data.firstNameEmpty}}
+                    <input type="text" class="form-control is-invalid" id="firstName" name="firstName" autocomplete="given-name" placeholder="First Name" tabindex="2" >
+                    <div class="invalid-feedback">Please enter your first name.</div>
+                {{else}}
+                    <input type="text" class="form-control" id="firstName" name="firstName" autocomplete="given-name" value={{data.firstName}} placeholder="First Name" tabindex="2" >
+                {{/if}}
+            </div>
+            <div class="form-group">
+                {{#if data.lastNameEmpty}}
+                    <input type="text" class="form-control is-invalid" id="lastName" name="lastName" autocomplete="family-name" placeholder="Last Name" tabindex="2" >
+                    <div class="invalid-feedback">Please enter your last name.</div>
+                {{else}}
+                    <input type="text" class="form-control" id="lastName" name="lastName" autocomplete="family-name" value={{data.lastName}} placeholder="Last Name" tabindex="2" >
+                {{/if}}
+            </div>
+            <div class="form-group">
+                {{#unless data.isGoodPassword}}
+                    <input type="password" class="form-control is-invalid" id="createPassword" name="createPassword" autocomplete="new-password" placeholder="Create a Password" aria-describedby="passwordHelp" tabindex="4" >
+                    <div class="invalid-feedback">Sorry, your password is invalid.</div>
+                {{else}}
+                    <input type="password" class="form-control" id="createPassword" name="createPassword" autocomplete="new-password" placeholder="Create a Password" aria-describedby="passwordHelp" tabindex="4" >
+                    <small class="form-text text-muted" id="passwordHelp">Use 8 or more characters (a combination of letters, numbers, and symbols)</small>
+                {{/unless}}
+                
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" autocomplete="new-password" placeholder="Confirm Your Input" tabindex="5" >
+                <div class="invalid-feedback">Please match your password input.</div>
+            </div>
+
+            <h5>Birthday</h5>
+            <p>To sign up, you need to be at least 18. Other people who use Airbnb won't see your birthday.</p>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    {{#unless data.monthEmpty}}
+                        <select class="custom-select" id="month" name="month" tabindex="6" >
+                            <option selected>Month</option>
+                            <option value="1">Janurary</option>
+                            <option value="2">Feburary</option>
+                            <option value="3">March</option>
+                            <option value="4">April</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">Augest</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                    {{else}}
+                        <select class="custom-select is-invalid" id="month" name="month" tabindex="6" >
+                            <option selected>Month</option>
+                            <option value="1">Janurary</option>
+                            <option value="2">Feburary</option>
+                            <option value="3">March</option>
+                            <option value="4">April</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">Augest</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                        <div class="invalid-feedback">This field is requied.</div>
+                    {{/unless}}
+                
+              </div>
+              
+              <div class="form-group col-md-4">
+                  {{#unless data.dayEmpty}}
+                    <select class="custom-select" id="day" name="day" tabindex="7" >
+                        <option selected>Day</option>                
+                    </select>
+                  {{else}}
+                    <select class="custom-select is-invalid" id="day" name="day" tabindex="7" >
+                        <option selected>Day</option>                
+                    </select>
+                    <div class="invalid-feedback">This field is requied.</div>
+                  {{/unless}}
+              </div>
+
+              <div class="form-group col-md-4">
+                {{#unless data.yearEmpty}}
+                    <select class="custom-select" id="year" name="year" tabindex="8">
+                        <option selected>Year</option>
+                    </select>
+                {{else}}
+                    <select class="custom-select is-invalid" id="year" name="year" tabindex="8">
+                        <option selected>Year</option>
+                    </select>
+                    <div class="invalid-feedback">This field is requied.</div>
+                {{/unless}}
+              </div>              
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="yes" id="subscribeCheck" name="subscribeCheck" checked tabindex="9">
+              <label class="form-check-label" for="subscribeCheck">
+                Subscribe to our promotional information and special offers.
+              </label>
+            </div>
+
+            <div class="form-group mt-3">
+              <input type="submit" class="btn btn-primary btn-block" value="Submit" tabindex="10">
+              <input type="reset" class="btn btn-secondary btn-block" value="Reset">
+            </div>
+        </form>
+
+        <!-- divider -->
+        <div class="row" id="regist-divider">
+          <div class="col"><hr></div>
+          <div class="col-auto">Or Sign With</div>
+          <div class="col"><hr></div>
+        </div>
+
+        <div class="row justify-content-center icon-group" id="sign-in-icon">
+          <span class="fa fa-facebook"></span>
+          <span class="fa fa-twitter" id="twitter"></span>
+          <span class="fa fa-instagram"></span>
+        </div>
+    </div>

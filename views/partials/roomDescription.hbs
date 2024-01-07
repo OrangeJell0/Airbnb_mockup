@@ -1,0 +1,121 @@
+<div class="container room-list-container">
+    <img src={{src}} class="img-fluid" alt={{title}}>
+        
+    <form action="/bookRoom" method="POST" id="bookRoom">
+        <div class="row">
+            <h3 class="col">{{title}}</h3>
+            <p class="col text-right">{{description}}</p>
+        </div> 
+        <br>
+        <h5>${{price}} / Day / Person</h5><br>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="checkInDate">Check In Date</label>
+                <input type="date" class="form-control" name="checkInDate" id="checkInDate">
+            </div>
+            <div class="form-group col-lg-6">
+                <label for="checkOutDate">Check Out Date</label>
+                <input type="date" class="form-control" name="checkOutDate" id="checkOutDate">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="numOfGuests">Number Of Guests</label>
+            <select type="number" class="form-control" id="numOfGuests" name="numOfGuests">
+                <option sellected>0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+        </div>
+
+        <div class="form-group mt-3">
+            <input type="button" class="btn btn-primary btn-block" id="confirm" value="Confirm" tabindex="10">
+        </div>
+
+        <div class="form-group" id="hide">
+            <input type="text" class="form-control" id="roomNumber" name="roomNumber" value={{number}}>
+        </div>
+
+        <div id="summary">
+            <br><h5>SUMMARY</h5><br>
+            <div class="summaryLine row">
+                <p class="col">Accomodation</p>
+                <p class="col text-right" id="accomodation"></p>
+            </div>  
+            <div class="summaryLine row">
+                <p class="col">30% Discount</p>
+                <p class="col text-right" id="discount"></p>
+            </div>  
+            <div class="summaryLine row">
+                <p class="col">Cleaning Fee</p>
+                <p class="col text-right" id="cleaning"></p>
+            </div>  
+            <div class="summaryLine row">
+                <p class="col">Service Fee</p>
+                <p class="col text-right" id="service"></p>
+            </div>  
+            <hr>
+            <div class="summaryLine row">
+                <p class="col font-weight-bolder">Total Amount</p>
+                <p class="col text-right" id="total"></p>
+            </div>  
+            <div class="form-group mt-3">
+                <input type="submit" class="btn btn-primary btn-block" value="Reserve Now" tabindex="10">
+                <input type="reset" class="btn btn-secondary btn-block" value="Reset">
+            </div>
+        </div>
+        
+
+    </form>   
+</div>
+
+<script>
+    window.onload = function() {
+        let base = {{price}};
+        let sum = document.querySelector("#summary");
+        sum.style.display = "none";
+        let checkInDate = document.querySelector("#checkInDate");
+        let checkOutDate = document.querySelector("#checkOutDate");
+        let numOfGuests = document.querySelector("#numOfGuests");
+        let number = 0;
+        let days = 1;
+
+        document.querySelector("#confirm").onclick = function() {
+            console.log("clicked");
+            let checkInDate = document.querySelector("#checkInDate");
+            let checkOutDate = document.querySelector("#checkOutDate");
+            let numOfGuests = document.querySelector("#numOfGuests");
+
+            let number = parseInt(numOfGuests.value);
+            let days = 0;
+
+            if (checkOutDate.value && checkInDate.value) {
+                days = checkOutDate.valueAsNumber - checkInDate.valueAsNumber;
+                days = days / 1000 / 60 / 60 / 24;
+                document.querySelector("#confirm").style.display = "none";
+                document.querySelector("#summary").style.display = "block";
+                outputResult(base, number, days);
+            }
+        }        
+    }
+
+    function outputResult(base, number, days) {
+        let acco = document.querySelector("#accomodation");
+        let disc = document.querySelector("#discount");
+        let clean = document.querySelector("#cleaning");
+        let serv = document.querySelector("#service");
+        let total = document.querySelector("#total");
+
+        acco.innerHTML = "$" + (base * number * days).toFixed(2);
+        disc.innerHTML = "-$" + (base * number * 0.3).toFixed(2);
+        clean.innerHTML = "$" + (base * 0.05 + number * days * 5).toFixed(2);
+        serv.innerHTML = "$" + (base * number * 0.1).toFixed(2);
+        total.innerHTML = "$" + calTotal(base, number, days);
+    }
+    function calTotal(base, number, days) {
+        return (base * number * (days + 0.3 + 0.1) + base * 0.05 + number * days * 5).toFixed(2);
+    }
+</script>

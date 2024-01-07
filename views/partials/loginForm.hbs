@@ -1,0 +1,35 @@
+<!-- Login Form -->
+<div class="container" id="login">
+    {{#if data.error}}
+        <p class="text-danger">{{data.msg}}</p>
+    {{/if}}
+    <form action="/login" method="POST" id="login-form">
+        <div class="form-group">
+            <input type="username" class="form-control" id="username" name="username" autocomplete="username" placeholder="Username" tabindex="1">
+            <div class="invalid-feedback" id="username-feedback">Please enter your username.</div>
+        </div>
+        <div class="form-group mt-4">
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password" tabindex="2">
+            <div class="invalid-feedback" id="password-feedback">Please enter your password.</div>
+        </div>
+        <div class="form-group mt-4">
+            <input type="submit" class="btn btn-primary btn-block mt-4" value="Log In" id="login-button" tabindex="3">
+            <input type="cancel" class="btn btn-secondary btn-block mt-4" value="Cancel">
+        </div>
+    </form>
+
+    <!-- divider -->
+    <div class="row divider mt-5">
+        <div class="col"><hr></div>
+        <div class="col-auto">Or Sign With</div>
+        <div class="col"><hr></div>
+    </div>
+
+    <!-- social icons -->
+    <div class="row justify-content-center icon-group mt-5" id="footer-icon">
+        <span class="fa fa-facebook"></span>
+        <span class="fa fa-twitter" id="log-in-twitter"></span>
+        <span class="fa fa-instagram"></span>
+    </div>
+    <p class="text-center mt-5"><a href="#">Create a New AirBnB Account</a></p>                        
+</div>
